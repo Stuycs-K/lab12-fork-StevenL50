@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 int main() {
-  printf("%d about to create 2 child processes.\n", getpid());
+  printf("%d about to create 2 child processes\n", getpid());
 
   pid_t p1 = -1;
   pid_t p2 = -1;
@@ -23,14 +23,14 @@ int main() {
     int time = rand() % 5 + 1;
     printf("%d %dsec\n", getpid(), time);
     sleep(time);
-    printf("%d finished after %d seconds\n", getpid(), time);
+    printf("%d finished after %dsec\n", getpid(), time);
     exit(time);
   }
   else {
     int status = 0;
     int pid = wait(&status);
     int time = WEXITSTATUS(status);
-    printf("Main Process %d is done. Child %d slept for %d sec\n", getpid(), pid, time);
+    printf("Main Process %d is done. Child %d slept for %dsec\n", getpid(), pid, time);
   }
   return 0;
 }
