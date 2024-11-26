@@ -19,8 +19,15 @@ int main() {
       perror("Fork 2 failed.");
       exit(1);
     }
+    srand(getpid());
+    int time = rand() % 5 + 1;
+    printf("%d %dsec\n", getpid(), time);
+    sleep(time);
+    printf("%d finished after %d seconds\n", getpid(), time);
+    exit(time);
   }
-
-
+  else {
+    
+  }
   return 0;
 }
