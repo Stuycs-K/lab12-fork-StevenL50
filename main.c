@@ -29,7 +29,7 @@ int main() {
   else {
     int status = 0;
     int pid = wait(&status);
-    time = WEXITSTATUS(status);
+    int time = WEXITSTATUS(status);
     printf("Main Process %d is done. Child %d slept for %d sec\n", getpid(), pid, time);
   }
   return 0;
